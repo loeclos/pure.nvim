@@ -1,8 +1,8 @@
-# kape-nvim
+# pure.nvim
 
 A warm, dark Neovim colorscheme rooted in coffee, earth, and amber — built for long coding sessions.
 
-> Part of the [Kape](https://github.com/gabiuz/kape) color system.
+> Fork of [kape-theme/nvim](https://github.com/kape-theme/nvim), renamed to `pure.nvim` with improved Go / LSP readability (types, functions and keywords are distinct from variables).
 
 ## Requirements
 
@@ -15,11 +15,11 @@ A warm, dark Neovim colorscheme rooted in coffee, earth, and amber — built for
 
 ```lua
 {
-  "gabiuz/kape-nvim",
+  "loeclos/pure.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("kape")
+    vim.cmd.colorscheme("pure")
   end,
 }
 ```
@@ -28,9 +28,9 @@ A warm, dark Neovim colorscheme rooted in coffee, earth, and amber — built for
 
 ```lua
 use {
-  "gabiuz/kape-nvim",
+  "loeclos/pure.nvim",
   config = function()
-    vim.cmd.colorscheme("kape")
+    vim.cmd.colorscheme("pure")
   end,
 }
 ```
@@ -38,29 +38,48 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'gabiuz/kape-nvim'
-colorscheme kape
+Plug 'loeclos/pure.nvim'
+colorscheme pure
 ```
 
 ## Usage
 
 ```lua
-vim.cmd.colorscheme("kape")
+vim.cmd.colorscheme("pure")
 ```
 
-To customise Kape, call `setup()` **before** applying the colorscheme:
+To customise Pure, call `setup()` **before** applying the colorscheme:
 
 ```lua
-require("kape").setup({ ... })
-vim.cmd.colorscheme("kape")
+require("pure").setup({ ... })
+vim.cmd.colorscheme("pure")
 ```
+
+For lualine:
+
+```lua
+require("lualine").setup({ options = { theme = "pure" } })
+```
+
+### Go readability
+
+Types, functions/methods and keywords are deliberately separated from variables, for both treesitter and `gopls` semantic tokens:
+
+| Token | Color |
+|---|---|
+| variables / params / fields | white `#d4be98` / aqua `#689d8a` |
+| types (`struct`, `interface`, …) | yellow `#e7bb5c` |
+| functions / methods | orange `#c87941` |
+| keywords (`func`, `if`, `for`, …) | red `#b53535` |
+
+See `lua/pure/theme/plugins/zz-go.lua`.
 
 ## Configuration
 
 All options are optional. Defaults are shown below.
 
 ```lua
-require("kape").setup({
+require("pure").setup({
   -- Draw backgrounds as NONE so your terminal background shows through.
   transparent = false,
 
@@ -100,8 +119,8 @@ require("kape").setup({
     },
   },
 
-  -- Inject arbitrary highlight overrides on top of Kape's own groups.
-  -- Receives the resolved Kape.Scheme and must return a table of hl groups.
+  -- Inject arbitrary highlight overrides on top of Pure's own groups.
+  -- Receives the resolved Pure.Scheme and must return a table of hl groups.
   override = nil,
   -- override = function(scheme)
   --   return {
@@ -131,10 +150,21 @@ Integrations are loaded automatically. Plugins that are not installed are skippe
 | [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | ✅ |
 | [neo-tree.nvim](https://github.com/nvim-neo-tree/nvim-neo-tree.nvim) | ✅ supports `background_clear` |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | ✅ per-plugin options via `plugins.bufferline` |
-| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | ✅ |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | ✅ `theme = "pure"` |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | ✅ |
 | [blink.cmp](https://github.com/Saghen/blink.cmp) | ✅ |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | ✅ diagnostic & semantic token groups |
+
+## Migrating from kape
+
+Renamed `kape` → `pure`:
+
+- `colorscheme kape` → `colorscheme pure`
+- `require("kape")` → `require("pure")`
+- lualine `theme = "kape"` → `theme = "pure"`
+- `:KapeReload` / `:KapeInfo` → `:PureReload` / `:PureInfo`
+
+Backward-compat shims are kept for now (`colors/kape.lua`, `lua/kape/init.lua`, `lua/lualine/themes/kape.lua`, `KapeReload`/`KapeInfo` aliases), so old configs keep working.
 
 ## Palette
 
