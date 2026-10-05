@@ -164,8 +164,6 @@ Renamed `kape` → `pure`:
 - lualine `theme = "kape"` → `theme = "pure"`
 - `:KapeReload` / `:KapeInfo` → `:PureReload` / `:PureInfo`
 
-Backward-compat shims are kept for now (`colors/kape.lua`, `lua/kape/init.lua`, `lua/lualine/themes/kape.lua`, `KapeReload`/`KapeInfo` aliases), so old configs keep working.
-
 ## Palette
 
 | Name | Hex | &nbsp; |

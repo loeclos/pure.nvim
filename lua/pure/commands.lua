@@ -24,21 +24,6 @@ function M.create()
     desc  = "Show the current Pure configuration",
     nargs = 0,
   })
-
-  -- Backward-compat aliases for the old kape name
-  cmd("KapeReload", function()
-    require("pure").load()
-  end, {
-    desc  = "Reload the Pure colorscheme (legacy alias)",
-    nargs = 0,
-  })
-  cmd("KapeInfo", function()
-    local config = require("pure.config").get()
-    vim.notify(vim.inspect(config), vim.log.levels.INFO, { title = "Pure Config" })
-  end, {
-    desc  = "Show the current Pure configuration (legacy alias)",
-    nargs = 0,
-  })
 end
 
 return M
