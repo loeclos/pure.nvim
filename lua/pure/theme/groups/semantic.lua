@@ -7,6 +7,9 @@ return {
   name = "semantic",
 
   highlights = function(scheme, config)
+    local styles = config.styles or {}
+    local italic_type = styles.type and styles.type.italic
+
     -- stylua: ignore
     return {
       -- Color aliases
@@ -56,26 +59,26 @@ return {
       PureInlayHints  = { bg = scheme.editorInlayHint.background, fg = scheme.editorInlayHint.foreground },
 
       -- LSP semantic tokens
-      -- Go readability fix: types -> yellow, funcs -> orange, keywords -> red,
-      -- so they are all distinct from variables (white/aqua).
+      -- Go readability fix: types -> yellow slanted, funcs -> orange,
+      -- keywords -> red, so they are all distinct from variables (white/aqua).
       ["@lsp.type.boolean"]              = { fg = scheme.base.purple },
-      ["@lsp.type.builtinType"]          = { fg = scheme.base.yellow },
-      ["@lsp.type.class"]                = { fg = scheme.base.yellow },
+      ["@lsp.type.builtinType"]          = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.class"]                = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.comment"]              = { link = "@comment" },
       ["@lsp.type.decorator"]            = { link = "@attribute" },
       ["@lsp.type.deriveHelper"]         = { link = "@attribute" },
-      ["@lsp.type.enum"]                 = { fg = scheme.base.yellow },
+      ["@lsp.type.enum"]                 = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.enumMember"]           = { fg = scheme.base.purple },
       ["@lsp.type.escapeSequence"]       = { link = "@string.escape" },
       ["@lsp.type.formatSpecifier"]      = { link = "@markup.list" },
       ["@lsp.type.function"]             = { fg = scheme.base.orange },
       ["@lsp.type.generic"]              = { link = "@variable" },
-      ["@lsp.type.interface"]            = { fg = scheme.base.yellow },
+      ["@lsp.type.interface"]            = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.keyword"]              = { fg = scheme.base.red },
       ["@lsp.type.lifetime"]             = { link = "@keyword.storage" },
       ["@lsp.type.macro"]                = { fg = scheme.base.orange },
       ["@lsp.type.method"]               = { fg = scheme.base.orange },
-      ["@lsp.type.namespace"]            = { fg = scheme.base.yellow },
+      ["@lsp.type.namespace"]            = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.namespace.python"]     = { link = "@variable" },
       ["@lsp.type.number"]               = { fg = scheme.base.purple },
       ["@lsp.type.operator"]             = { fg = scheme.base.green },
@@ -84,16 +87,16 @@ return {
       ["@lsp.type.selfKeyword"]          = { link = "@variable.builtin" },
       ["@lsp.type.selfTypeKeyword"]      = { link = "@variable.builtin" },
       ["@lsp.type.string"]               = { link = "@string" },
-      ["@lsp.type.struct"]               = { fg = scheme.base.yellow },
-      ["@lsp.type.type"]                 = { fg = scheme.base.yellow },
+      ["@lsp.type.struct"]               = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.type"]                 = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.typeAlias"]            = { link = "@type.definition" },
-      ["@lsp.type.typeParameter"]        = { fg = scheme.base.yellow },
+      ["@lsp.type.typeParameter"]        = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.unresolvedReference"]  = { undercurl = true, sp = scheme.base.red },
       ["@lsp.type.variable"]             = { fg = scheme.base.white },
 
       -- Type modifiers
-      ["@lsp.typemod.class.defaultLibrary"]      = { fg = scheme.base.yellow },
-      ["@lsp.typemod.enum.defaultLibrary"]       = { fg = scheme.base.yellow },
+      ["@lsp.typemod.class.defaultLibrary"]      = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.typemod.enum.defaultLibrary"]       = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.typemod.enumMember.defaultLibrary"] = { fg = scheme.base.purple },
       ["@lsp.typemod.function.defaultLibrary"]   = { fg = scheme.base.orange },
       ["@lsp.typemod.keyword.async"]             = { link = "@keyword.coroutine" },
@@ -102,9 +105,9 @@ return {
       ["@lsp.typemod.method.defaultLibrary"]     = { fg = scheme.base.orange },
       ["@lsp.typemod.operator.injected"]         = { fg = scheme.base.green },
       ["@lsp.typemod.string.injected"]           = { link = "@string" },
-      ["@lsp.typemod.struct.defaultLibrary"]     = { fg = scheme.base.yellow },
-      ["@lsp.typemod.type.defaultLibrary"]       = { fg = scheme.base.yellow },
-      ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = scheme.base.yellow },
+      ["@lsp.typemod.struct.defaultLibrary"]     = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.typemod.type.defaultLibrary"]       = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.typemod.variable.callable"]         = { fg = scheme.base.orange },
       ["@lsp.typemod.variable.defaultLibrary"]   = { fg = scheme.base.white },
       ["@lsp.typemod.variable.injected"]         = { fg = scheme.base.white },

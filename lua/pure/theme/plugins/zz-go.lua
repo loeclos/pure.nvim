@@ -50,16 +50,18 @@ return {
       ["@property"]               = { fg = scheme.base.white },
 
       -- gopls semantic tokens (incl. .go-suffixed variants, just in case)
-      ["@lsp.type.type"]                 = { fg = scheme.base.yellow },
-      ["@lsp.type.type.go"]              = { fg = scheme.base.yellow },
-      ["@lsp.type.struct"]               = { fg = scheme.base.yellow },
-      ["@lsp.type.struct.go"]            = { fg = scheme.base.yellow },
-      ["@lsp.type.interface"]            = { fg = scheme.base.yellow },
-      ["@lsp.type.class"]                = { fg = scheme.base.yellow },
-      ["@lsp.type.enum"]                 = { fg = scheme.base.yellow },
-      ["@lsp.type.builtinType"]          = { fg = scheme.base.yellow },
-      ["@lsp.type.namespace"]            = { fg = scheme.base.yellow },
-      ["@lsp.type.typeParameter"]        = { fg = scheme.base.yellow },
+      -- Types are slanted (italic) so struct names and parameter types
+      -- stand out from variables.
+      ["@lsp.type.type"]                 = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.type.go"]              = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.struct"]               = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.struct.go"]            = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.interface"]            = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.class"]                = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.enum"]                 = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.builtinType"]          = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.namespace"]            = { fg = scheme.base.yellow, italic = italic_type },
+      ["@lsp.type.typeParameter"]        = { fg = scheme.base.yellow, italic = italic_type },
       ["@lsp.type.function"]             = { fg = scheme.base.orange },
       ["@lsp.type.function.go"]          = { fg = scheme.base.orange },
       ["@lsp.type.method"]               = { fg = scheme.base.orange },
