@@ -28,13 +28,13 @@ return {
       ["@punctuation.bracket"]    = { fg = scheme.base.green },
       ["@punctuation.special"]    = { fg = scheme.base.green },
 
-      -- Literals
-      ["@string"]                 = { fg = scheme.base.green },
-      ["@string.regexp"]          = { fg = scheme.base.green },
+      -- Blue keeps literals distinct from green punctuation.
+      ["@string"]                 = { fg = scheme.base.blue },
+      ["@string.regexp"]          = { fg = scheme.base.blue },
       ["@string.regex"]           = { link = "@string.regexp" },               -- @deprecated
-      ["@string.escape"]          = { fg = scheme.base.green },
-      ["@string.special"]         = { fg = scheme.base.green },
-      ["@character"]              = { fg = scheme.base.green },
+      ["@string.escape"]          = { fg = scheme.base.blue },
+      ["@string.special"]         = { fg = scheme.base.blue },
+      ["@character"]              = { fg = scheme.base.blue },
       ["@character.special"]      = { fg = scheme.base.purple },
       ["@boolean"]                = { fg = scheme.base.purple },
       ["@number"]                 = { fg = scheme.base.purple },
@@ -91,7 +91,7 @@ return {
       ["@constant.macro"]         = { fg = scheme.base.orange, italic = italic_type },
       ["@module"]                 = { fg = scheme.base.aqua, italic = italic_type },
       ["@namespace"]              = { link = "@module" },                      -- @deprecated
-      ["@string.special.symbol"]  = { fg = scheme.base.green },
+      ["@string.special.symbol"]  = { fg = scheme.base.blue },
       ["@symbol"]                 = { link = "@string.special.symbol" },       -- @deprecated
 
       -- Markup / Text
