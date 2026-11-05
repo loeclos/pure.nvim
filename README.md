@@ -173,6 +173,7 @@ Renamed `kape` → `pure`:
 | `red` | `#b53535` | ![#b53535](https://placehold.co/16x16/b53535/b53535.png) |
 | `orange` | `#c87941` | ![#c87941](https://placehold.co/16x16/c87941/c87941.png) |
 | `green` | `#b4c76e` | ![#b4c76e](https://placehold.co/16x16/b4c76e/b4c76e.png) |
+| `string` | `#f7bb3b` | ![#f7bb3b](https://placehold.co/16x16/f7bb3b/f7bb3b.png) |
 | `yellow` | `#e7bb5c` | ![#e7bb5c](https://placehold.co/16x16/e7bb5c/e7bb5c.png) |
 | `blue` | `#7b8fd4` | ![#7b8fd4](https://placehold.co/16x16/7b8fd4/7b8fd4.png) |
 | `purple` | `#b06880` | ![#b06880](https://placehold.co/16x16/b06880/b06880.png) |

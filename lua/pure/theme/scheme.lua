@@ -157,6 +157,7 @@
 ---@field red     string
 ---@field orange  string
 ---@field green   string
+---@field string  string
 ---@field yellow  string
 ---@field blue    string
 ---@field magenta string
@@ -440,6 +441,7 @@ function M.build(palette, config)
     red     = p.accent1,
     orange  = p.accent2,
     green   = p.accent4,
+    string  = p.string,
     yellow  = p.accent3,
     blue    = p.blue,
     magenta = p.accent6,

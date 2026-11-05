@@ -15,9 +15,9 @@ return {
 
       -- Constants
       Constant  = { fg = scheme.base.purple },
-      -- Blue keeps literals distinct from green punctuation.
-      String    = { fg = scheme.base.blue },
-      Character = { fg = scheme.base.blue },
+      -- String literals use their own accent to stand apart from punctuation.
+      String    = { fg = scheme.base.string },
+      Character = { fg = scheme.base.string },
       Number    = { fg = scheme.base.purple },
       Float     = { fg = scheme.base.purple },
       Boolean   = { fg = scheme.base.purple },

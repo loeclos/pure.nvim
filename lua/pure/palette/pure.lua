@@ -18,6 +18,7 @@
 ---@field dimmed4    string
 ---@field dimmed5    string
 ---@field blue          string
+---@field string       string
 ---@field bright_red    string
 ---@field bright_orange string
 ---@field bright_yellow string
@@ -59,6 +60,9 @@ return {
 
   -- Blue (separate from aqua, used for LSP info)
   blue = "#7b8fd4",
+
+  -- String literals (amber, distinct from green punctuation)
+  string = "#f7bb3b",
 
   -- Brights
   bright_red    = "#c94040",
